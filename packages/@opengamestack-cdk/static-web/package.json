@@ -1,8 +1,9 @@
 {
   "name": "@opengamestack-cdk/static-web",
+  "description": "Open Game Stack logo component to be used in Svelte projects",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "build": "tsc"
   },
@@ -10,6 +11,14 @@
   "author": {
     "name": "Open Game Stack",
     "url": "https://opengamestack.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opengamestack/cdk"
+  },  
+  "homepage": "https://github.com/opengamestack/cdk",
+  "bugs": {
+    "url": "https://github.com/opengamestack/cdk/issues"
   },
   "dependencies": {
     "@aws-cdk/assert": "1.36.1",
