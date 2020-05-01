@@ -1,0 +1,27 @@
+{
+  "name": "@opengamestack-cdk/static-web",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "tsc"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Open Game Stack",
+    "url": "https://opengamestack.com"
+  },
+  "dependencies": {
+    "@aws-cdk/assert": "1.36.1",
+    "@types/node": "10.17.5",
+    "aws-cdk": "1.36.1",
+    "typescript": "~3.7.2"
+  },
+  "devDependencies": {
+    "@aws-cdk/aws-cloudfront": "^1.36.1",
+    "@aws-cdk/aws-route53": "^1.36.1",
+    "@aws-cdk/aws-route53-targets": "^1.36.1",
+    "@aws-cdk/aws-s3": "^1.36.1",
+    "@aws-cdk/aws-s3-deployment": "^1.36.1"
+  }
+}
