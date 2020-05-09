@@ -1,9 +1,9 @@
 {
   "name": "@opengamestack-cdk/static-web",
-  "description": "Open Game Stack logo component to be used in Svelte projects",
+  "description": "Open Game Stack constructs and helpers to be used with AWS CDK",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "version": "1.37.0",
+  "version": "1.38.0+1",
   "scripts": {
     "build": "tsc",
     "cdkb": "npm run build"
@@ -22,16 +22,16 @@
     "url": "https://github.com/opengamestack/cdk/issues"
   },
   "dependencies": {
-    "@aws-cdk/assert": "1.37.0",
+    "@aws-cdk/assert": "1.38.0",
     "@types/node": "13.13.5",
-    "aws-cdk": "1.37.0",
+    "aws-cdk": "1.38.0",
     "typescript": "~3.8.3"
   },
   "devDependencies": {
-    "@aws-cdk/aws-cloudfront": "^1.37.0",
-    "@aws-cdk/aws-route53": "^1.37.0",
-    "@aws-cdk/aws-route53-targets": "^1.37.0",
-    "@aws-cdk/aws-s3": "^1.37.0",
-    "@aws-cdk/aws-s3-deployment": "^1.37.0"
+    "@aws-cdk/aws-cloudfront": "^1.38.0",
+    "@aws-cdk/aws-route53": "^1.38.0",
+    "@aws-cdk/aws-route53-targets": "^1.38.0",
+    "@aws-cdk/aws-s3": "^1.38.0",
+    "@aws-cdk/aws-s3-deployment": "^1.38.0"
   }
 }

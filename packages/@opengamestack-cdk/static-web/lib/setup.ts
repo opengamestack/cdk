@@ -17,7 +17,7 @@ export interface SetupProps {
     acmCertArn: string;
     hostedZoneId: string;
     hostedZoneName: string;
-    route53RecordName: string;
+    route53RecordNames: string[];
     cloudFrontDomainNames: string[];
     cloudFrontPriceClass?: cloudfront.PriceClass;
 }
@@ -27,7 +27,7 @@ export class Setup extends core.Construct {
     public readonly bucket: s3.Bucket;
     public readonly distribution: cloudfront.CloudFrontWebDistribution;
     public readonly hostedZone: route53.IHostedZone;
-    public readonly aRecord: route53.ARecord;
+    public readonly aRecords: route53.ARecord[];
 
     constructor(scope: core.Construct, id: string, props: SetupProps) {
         super(scope, id);
@@ -71,10 +71,14 @@ export class Setup extends core.Construct {
             hostedZoneId: props.hostedZoneId,
             zoneName: props.hostedZoneName
         });
-        this.aRecord = new route53.ARecord(this, 'ARecord', {
-            recordName: props.route53RecordName,
-            zone: this.hostedZone,
-            target: route53.RecordTarget.fromAlias(new route53Targets.CloudFrontTarget(this.distribution))
+        this.aRecords = [];
+        props.route53RecordNames.forEach(n => {
+            const aRecord = new route53.ARecord(this, 'ARecord', {
+                recordName: n,
+                zone: this.hostedZone,
+                target: route53.RecordTarget.fromAlias(new route53Targets.CloudFrontTarget(this.distribution))
+            });
+            this.aRecords.push(aRecord);
         });
 
     }

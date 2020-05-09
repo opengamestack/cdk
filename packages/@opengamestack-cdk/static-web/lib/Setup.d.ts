@@ -14,7 +14,7 @@ export interface SetupProps {
     acmCertArn: string;
     hostedZoneId: string;
     hostedZoneName: string;
-    route53RecordName: string;
+    route53RecordNames: string[];
     cloudFrontDomainNames: string[];
     cloudFrontPriceClass?: cloudfront.PriceClass;
 }
@@ -22,6 +22,6 @@ export declare class Setup extends core.Construct {
     readonly bucket: s3.Bucket;
     readonly distribution: cloudfront.CloudFrontWebDistribution;
     readonly hostedZone: route53.IHostedZone;
-    readonly aRecord: route53.ARecord;
+    readonly aRecords: route53.ARecord[];
     constructor(scope: core.Construct, id: string, props: SetupProps);
 }
