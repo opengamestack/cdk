@@ -72,8 +72,9 @@ export class Setup extends core.Construct {
             zoneName: props.hostedZoneName
         });
         this.aRecords = [];
+        let aRecordCount = 1;
         props.route53RecordNames.forEach(n => {
-            const aRecord = new route53.ARecord(this, 'ARecord', {
+            const aRecord = new route53.ARecord(this, `ARecord${aRecordCount++}`, {
                 recordName: n,
                 zone: this.hostedZone,
                 target: route53.RecordTarget.fromAlias(new route53Targets.CloudFrontTarget(this.distribution))

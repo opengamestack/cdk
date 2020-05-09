@@ -3,7 +3,7 @@
   "description": "Open Game Stack constructs and helpers to be used with AWS CDK",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "version": "1.38.0+1",
+  "version": "2.0.0-1.38.0",
   "scripts": {
     "build": "tsc",
     "cdkb": "npm run build"
